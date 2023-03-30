@@ -1,5 +1,5 @@
 # Arm Processor Ecosystem
-Infographic of ARM microarchitectures as tabulated on Wikepedia's [List_of_ARM_microarchitectures](https://en.wikipedia.org/wiki/List_of_ARM_microarchitectures)
+Infographic of ARM microarchitectures as tabulated on Wikepedia's [List_of_ARM_microarchitectures](https://en.wikipedia.org/wiki/List_of_ARM_microarchitectures) combined with additional information from Wikepedia's [ARM_architecture_family](https://en.wikipedia.org/wiki/ARM_architecture_family)
 
 ## Arm Architecture Timeline
 Over time the arm architecture has evolved to encorporate additional functionality to meet market needs
