@@ -1,0 +1,333 @@
+/*
+ *	Infographic of ARM microarchitectures as tabulated: https://en.wikipedia.org/wiki/List_of_ARM_microarchitectures
+ *	> Family
+ *	>> Architecture
+ *	>>> Core 
+*/
+digraph G {
+	compound=true
+	nodesep=0
+	graph [ labelloc=t; label=<<B>ARM Processor Ecosystem</B>>; tooltip="ARM Ecosystem"]
+	graph [ splines=ortho; bgcolor=white; style=filled; ]
+	node [ fontsize=12; shape=rectangle; fixedsize=true; width=1.5; height=0.5; fillcolor=grey; style=filled ]
+	edge [ style=invis; arrowhead=none; arrowtail=none; ]
+
+	// DATA
+	subgraph cluster_ARM7T {
+		graph [ label="ARM7T"; ]
+		node [ fillcolor=orange ] // Advanced ISA
+		subgraph cluster_ARMv4T {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv4T"; color=4 ]
+			ARM7TDMI ; ARM710T ; ARM720T ; ARM740T
+		}
+	}
+	subgraph cluster_ARM7EJ {
+		graph [ label="ARM7EJ"; ]
+		node [ fillcolor=orange ] // Advanced ISA
+		subgraph cluster_ARMv5TEJ {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv5TEJ"; color=5 ]
+			ARM7EJ_S [label="ARM7EJ-S"]
+		}
+	}
+	subgraph cluster_ARM8 {
+		graph [ label="ARM8"; ]
+		node [ fillcolor=orange ] // Advanced ISA
+		subgraph cluster_ARMv4 {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv4"; color=4]
+			ARM810
+		}
+	}
+	subgraph cluster_ARM9T {
+		graph [ label="ARM9T"; ]
+		node [ fillcolor=orange ] // Advanced ISA
+		subgraph cluster_ARMv4T {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv4T"; color=4]
+			ARM9TDMI ; ARM920T ; ARM922T ; ARM940T
+		}
+	}
+	subgraph cluster_ARM9E {
+		graph [ label="ARM9E"; ]
+		node [ fillcolor=orange ] // Advanced ISA
+		subgraph cluster_ARMv5TE {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv5TE"; color=5]
+			ARM946E_S [label="ARM946E-S"] 
+			ARM966E_S [label="ARM966E-S"]
+			ARM968E_S [label="ARM968E-S"]
+			ARM946E_S ; ARM966E_S ; ARM968E_S ; ARM996HS
+		}
+		subgraph cluster_ARMv5TEJ {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv5TEJ"; color=5]
+			ARM926EJ_S [label="ARM926EJ-S"]
+		}
+		ARM996HS ; ARM926EJ_S
+	}
+	subgraph cluster_ARM10E {
+		graph [ label="ARM10E"; ]
+		node [ fillcolor=orange ] // Advanced ISA
+		subgraph cluster_ARMv5TE {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv5TE"; color=5 ]
+			ARM1020E ; ARM1022E
+		}
+		subgraph cluster_ARMv5TEJ {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv5TEJ"; color=5]
+			ARM1026EJ_S [label="ARM1026EJ-S"]
+		}
+		ARM1022E ; ARM1026EJ_S
+	}
+	subgraph cluster_ARM11 {
+		graph [ label="ARM11"; ]
+		node [ fillcolor=orange ] // Advanced ISA
+		subgraph cluster_ARMv6 {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv6"; color=6]
+			ARM1136JF_S  [ label="ARM1136J(F)-S" ]
+		}
+		subgraph cluster_ARMv6T2 {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv6T2"; color=6]
+			ARM1156T2F_S [ label="ARM1156T2(F)-S" ]
+		}
+		subgraph cluster_ARMv6Z {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv6Z"; color=6]
+			ARM1176JZF_S [ label="ARM1176JZ(F)-S" ]
+		}
+		subgraph cluster_ARMv6K {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv6K"; color=6]
+			ARM11MPCore
+		}
+		ARM1136JF_S ; ARM1156T2F_S ; ARM1176JZF_S ; ARM11MPCore
+	}
+	subgraph cluster_ARM1 {
+		graph [ label="ARM1"; ]
+		node [ fillcolor=deepskyblue3 ] // Early ISA
+		subgraph cluster_ARMv1 {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv1"; color=1]
+			ARM1
+		}
+	}
+	subgraph cluster_ARM2 {
+		graph [ label="ARM2"; ]
+		node [ fillcolor=deepskyblue3 ] // Early ISA
+		subgraph cluster_ARMv2 {
+			graph [ fontsize=12; colorscheme=set312;]
+			graph [ label="ARMv2"; color=2 ]
+			ARM2
+		}
+		subgraph cluster_ARMv2a {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv2a"; color=2 ]
+			ARM250
+		}
+		ARM2 ; ARM250
+	}
+	subgraph cluster_ARM3 {
+		graph [ label="ARM3"; ]
+		node [ fillcolor=deepskyblue3 ] // Early ISA
+		subgraph cluster_ARMv2a {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv2a"; color=2 ]
+			ARM3
+		}
+	}
+	subgraph cluster_ARM6 {
+		graph [ label="ARM6"; ]
+		node [ fillcolor=deepskyblue3 ] // Early ISA
+		subgraph cluster_ARMv3 {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv3"; color=3]
+			ARM60 ; ARM600 ; ARM610
+		}
+	}
+	subgraph cluster_ARM7 {
+		graph [ label="ARM7"; ]
+		node [ fillcolor=deepskyblue3 ] // Early ISA
+		subgraph cluster_ARMv3{
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv3"; color=3 ]
+			ARM700 ; ARM710 ; ARM710a
+		}
+	}
+	subgraph cluster_SecurCore {
+		graph [ label="SecurCore"; ]
+		node [ fillcolor=orange ] // Advanced Processor
+		subgraph cluster_ARMv6_M {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv6-M"; color=6]
+			SC000
+		}
+		subgraph cluster_ARMv4T {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv4T"; color=4]
+			SC100
+		}
+		subgraph cluster_ARMv7_M {
+			node [ fillcolor=olivedrab3 ] // Cortex Processor
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv7-M"; color=7]
+			SC300
+		}
+		SC000 ; SC100 ; SC300
+	}
+	subgraph cluster_Cortex_M {
+		graph [ label="Cortex-M"; ]
+		node [ fillcolor=olivedrab3 ] // Embedded ARM Processor
+		subgraph cluster_ARMv6_M {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv6-M"; color=6]
+			Cortex_M0 [ label="Cortex-M0" ]
+			Cortex_M0plus [ label="Cortex-M0+" ]
+			Cortex_M1 [ label="Cortex-M1" ]
+			Cortex_M0 ; Cortex_M0plus ; Cortex_M1
+		}
+		subgraph cluster_ARMv7_M {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv7-M"; color=7]
+			Cortex_M3 [ label="Cortex-M3" ]
+		}
+		subgraph cluster_ARMv7E_M {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv7E-M"; color=7]
+			Cortex_M4 [ label="Cortex-M4" ]
+			Cortex_M7 [ label="Cortex-M7" ]
+		}
+		subgraph cluster_ARMv8_M_Baseline {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv8-M Baseline"; color=8]
+			Cortex_M23 [ label="Cortex-M23" ]
+		}
+		subgraph cluster_ARMv8_M_Mainline {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv8_M Mainline"; color=8]
+			Cortex_M33 [ label="Cortex-M33" ]
+			Cortex_M35P [ label="Cortex-M35P" ]
+		}
+		subgraph cluster_ARMv81_MMainline {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv8.1_M Mainline"; color=8]
+			Cortex_M55 [ label="Cortex-M55" ]
+		}
+		Cortex_M1 ; Cortex_M3 ; Cortex_M4 ; Cortex_M7 ; Cortex_M23 ; Cortex_M33 ; Cortex_M35P ; Cortex_M55
+	}
+	subgraph cluster_Cortex_R {
+		graph [ label="Cortex-R"; ]
+		node [ fillcolor=olivedrab3 ] // Embedded ARM Processor
+		subgraph cluster_ARMv7_R {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv7-R"; color=7]
+			Cortex_R4 [ label="Cortex-R4" ]
+			Cortex_R5 [ label="Cortex-R5" ]
+			Cortex_R7 [ label="Cortex-R7" ]
+			Cortex_R8 [ label="Cortex-R8" ]
+			Cortex_R4 ; Cortex_R5 ; Cortex_R7 ; Cortex_R8
+		}
+		subgraph cluster_ARMv8_R {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv8-R"; color=8]
+			Cortex_R52 [ label="Cortex-R52" ]
+			Cortex_R82 [ label="Cortex-R82" ]
+			Cortex_R52 ; Cortex_R82
+		}
+		Cortex_R8 ; Cortex_R52
+	}
+	subgraph cluster_Cortex_A_32 {
+		graph [ label="Cortex-A (32-bit)"; ]
+		node [ fillcolor=olivedrab3 ] // Cortex ISA
+		subgraph cluster_ARMv7_A {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv7-A"; color=7]
+			Cortex_A5 [ label="Cortex-A5" ]
+			Cortex_A7 [ label="Cortex-A7" ]
+			Cortex_A8 [ label="Cortex-A8" ]
+			Cortex_A9 [ label="Cortex-A9" ]
+			Cortex_A12 [ label="Cortex-A12" ]
+			Cortex_A15 [ label="Cortex-A15" ]
+			Cortex_A17 [ label="Cortex-A17" ]
+			Cortex_A5 ; Cortex_A7 ; Cortex_A8 ; Cortex_A9 ; Cortex_A12 ; Cortex_A15 ; Cortex_A17
+		}
+		subgraph cluster_ARMv8_A {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv8-A"; color=8]
+			Cortex_A32 [ label="Cortex-A32" ]
+		}
+		Cortex_A17 ; Cortex_A32
+	}
+	subgraph cluster_Cortex_A_64 {
+		graph [ label="Cortex-A (64-bit)"; ]
+		node [ fillcolor=olivedrab3 ] // Cortex ISA
+		subgraph cluster_ARMv8_A {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv8-A"; color=8]
+			Cortex_A34 [ label="Cortex-A34" ]
+			Cortex_A35 [ label="Cortex-A35" ]
+			Cortex_A53 [ label="Cortex-A53" ]
+			Cortex_A57 [ label="Cortex-A57" ]
+			Cortex_A72 [ label="Cortex-A72" ]
+			Cortex_A73 [ label="Cortex-A73" ]
+			Cortex_A34 ; Cortex_A35 ; Cortex_A53 ; Cortex_A57 ; Cortex_A72 ; Cortex_A73
+		}
+		subgraph cluster_ARMv8p2_A {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv8.2-A"; color=8]
+			Cortex_A55 [ label="Cortex-A55" ]
+			Cortex_A65 [ label="Cortex-A65" ]
+			Cortex_A65AE [ label="Cortex-A65AE" ]
+			Cortex_A75 [ label="Cortex-A75" ]
+			Cortex_A76 [ label="Cortex-A76" ]
+			Cortex_A76AE [ label="Cortex-A76AE" ]
+			Cortex_A77 [ label="Cortex-A77" ]
+			Cortex_A78 [ label="Cortex-A78" ]
+			Cortex_A78AE [ label="Cortex-A78AE" ]
+			Cortex_X1 [ label="Cortex-X1" ]
+			Cortex_A78C [ label="Cortex-A78C" ]
+			Cortex_A55 ; Cortex_A65 ; Cortex_A65AE ; Cortex_A75 ; Cortex_A76 ; Cortex_A76AE ; Cortex_A77 ; Cortex_A78 ; Cortex_A78AE ; Cortex_X1 ; Cortex_A78C
+		}
+		subgraph cluster_ARMv9_A {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="ARMv9-A"; color=10]
+			Cortex_A710 [ label="Cortex-A710" ]
+		}
+		Cortex_A73 ; Cortex_A55
+		Cortex_A78C ; Cortex_A710
+	}
+	subgraph cluster_Neoverse {
+		graph [ label="Neoverse"; ]
+		subgraph cluster_Neoverse_arch {
+			graph [ fontsize=12; colorscheme=set312; ]
+			graph [ label="Neoverse"; color=11]
+			Neoverse_N1 [ label="Neoverse N1" ]
+			Neoverse_N2 [ label="Neoverse N2" ]
+			Neoverse_N3 [ label="Neoverse N3" ]
+			Neoverse_N1 ; Neoverse_N2 ; Neoverse_N3
+		}
+	}
+	// KEY
+	subgraph cluster_keyFamily {
+		graph [ fontsize=20; label=<<B>Key: </B>   Family>; tooltip="Key" ]
+		node [ fontsize=18; width=3; height=1; ]
+		subgraph cluster_keyArch {
+			graph [ colorscheme=set312; ]
+			graph [ label="Architecture"; color=9 ]
+			Early_ISA [ fillcolor=deepskyblue3 ]
+			Advanced_ISA [ fillcolor=orange ]
+			Cortex_ISA [ fillcolor=olivedrab3 ]
+			Other_ISA [ fillcolor=gray ]
+			Early_ISA ; Advanced_ISA ; Cortex_ISA ; Other_ISA
+		}
+	}
+
+	ARM740T -> ARM7EJ_S -> ARM810 -> ARM940T -> ARM996HS -> ARM1022E -> ARM11MPCore
+	ARM1 -> ARM250 -> ARM3 -> ARM610 -> ARM710a -> Neoverse_N3
+	SC300 -> Cortex_M55 -> Cortex_M7 -> Cortex_R82 -> Cortex_A32 -> Cortex_A710 -> Cortex_A73
+	Early_ISA -> Advanced_ISA -> Cortex_ISA -> Other_ISA
+}
