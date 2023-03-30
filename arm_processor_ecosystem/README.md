@@ -8,3 +8,6 @@ Infographic of ARM microarchitectures as tabulated on Wikepedia's [List_of_ARM_m
 - Advanced_ISA
 - Cortex_ISA
 - Other_ISA
+
+# The infographic
+![ecosystem.svg](ecosystem.svg)
